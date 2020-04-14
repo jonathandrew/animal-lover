@@ -1,19 +1,4 @@
-import React, { Component } from "react";
-const imageStyling = {
-  width: "20%",
-  height: "125px",
-};
-
-const gridDiv = {
-  width: "70%",
-  height: "125px",
-  display: "grid",
-};
-const secondGrid = {
-  paddingLeft: "100%",
-};
-
-let images = [
+let Images = [
   {
     image: "/images/canines/candog.jpeg",
     type: "canine",
@@ -88,71 +73,4 @@ let images = [
   },
 ];
 
-// function searchIt(term) {
-//   return function (item) {
-//     return item.subject.toLowerCase().includes(term.toLowerCase());
-//   };
-// }
-class Animals extends Component {
-  constructor() {
-    super();
-    this.state = { images };
-  }
-
-  onDelete(id) {
-    const deletingPicture = this.state.images.filter(
-      (item) => item.animalId !== id
-    );
-    this.setState({ images: deletingPicture });
-  }
-
-  onLike(id) {
-    const deletingPicture = this.state.images.filter(
-      (item) => item.animalId !== id
-    );
-    this.setState({ images: deletingPicture });
-  }
-
-  render() {
-    return (
-      <div style={gridDiv}>
-        <div style={secondGrid}>Hello</div>
-        {this.state.images.map((item) => {
-          return (
-            <div>
-              <img
-                src={item.image}
-                alt="..."
-                className="test"
-                style={imageStyling}
-              ></img>
-              <div>
-                <p> {item.name}</p>
-                <p>{item.type}</p>
-                <p>{item.description}</p>
-                <button
-                  onclick={() => {
-                    const newarray = [];
-                    return newarray.push(this.onlike(item));
-                  }}
-                >
-                  {" "}
-                  Like{" "}
-                </button>
-                <button> Dislike </button>
-                <button
-                  onClick={() => {
-                    return this.onDelete(item.animalId);
-                  }}
-                >
-                  Delete{" "}
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-}
-export default Animals;
+export default Images;
